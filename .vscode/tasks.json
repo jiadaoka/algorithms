@@ -5,7 +5,7 @@
     "tasks": [
         {
             "type": "npm",
-            "script": "jest -- -t ${fileBasenameNoExtension}",
+            "script": "jest -- ${relativeFileDirname}/${fileBasenameNoExtension}",
             "problemMatcher": [],
             "label": "npm: jest",
             "detail": "jest"

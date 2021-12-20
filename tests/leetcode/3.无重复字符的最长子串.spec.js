@@ -1,4 +1,4 @@
-import { lengthOfLongestSubstring } from "../leetcode/3.无重复字符的最长子串.js";
+import { lengthOfLongestSubstring } from "../../leetcode/3.无重复字符的最长子串.js";
 
 describe("3.无重复字符的最长子串", () => {
     test("biidygcc", () => {

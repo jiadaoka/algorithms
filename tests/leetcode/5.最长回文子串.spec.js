@@ -1,4 +1,4 @@
-import { longestPalindrome } from "../leetcode/5.最长回文子串.js";
+import { longestPalindrome } from "../../leetcode/5.最长回文子串.js";
 
 describe("5.最长回文子串", () => {
     test("ccc", () => {

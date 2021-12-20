@@ -1,4 +1,4 @@
-import { convert } from "../leetcode/6.z-字形变换.js";
+import { convert } from "../../leetcode/6.z-字形变换.js";
 
 describe("6.z-字形变换", () => {
     test("AB", () => {
