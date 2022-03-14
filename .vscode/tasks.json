@@ -20,6 +20,17 @@
                     "file": "${relativeFile}"
                 }
             }
+        },
+        {
+            "type": "gulp",
+            "task": "createLeetcodeTest",
+            "problemMatcher": [],
+            "label": "gulp: createLeetcodeTest",
+            "options": {
+                "env": {
+                    "file": "${relativeFile}"
+                }
+            }
         }
     ]
 }
