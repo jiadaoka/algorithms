@@ -3,6 +3,7 @@ const rename = require("gulp-rename");
 
 const { Transform } = require("stream");
 const { basename } = require("path");
+const { existsSync } = require("fs");
 
 /**
  * 创建时间文件名
@@ -84,27 +85,31 @@ function createLeetcodeTestOnJest(done) {
     const reg = /^leetcode\//;
     const file = process.env.file.replace(/\\/g, "/");
     const bName = basename(file, ".js");
-    console.log(bName);
 
-    if (reg.test(file)) {
-        return src("template/leetcodeTestOnJest.template.js")
-            .pipe(
-                readFileTemplate({
-                    params: { title: bName },
-                })
-            )
-            .pipe(
-                rename(function (path) {
-                    return {
-                        dirname: "leetcode/",
-                        basename: bName,
-                        extname: ".spec.js",
-                    };
-                })
-            )
-            .pipe(dest("./tests"));
-    } else {
+    if (existsSync(`tests/leetcode/${bName}.spec.js`)) {
+        console.log("文件已存在");
         done();
+    } else {
+        if (reg.test(file)) {
+            return src("template/leetcodeTestOnJest.template.js")
+                .pipe(
+                    readFileTemplate({
+                        params: { title: bName },
+                    })
+                )
+                .pipe(
+                    rename(function (path) {
+                        return {
+                            dirname: "leetcode/",
+                            basename: bName,
+                            extname: ".spec.js",
+                        };
+                    })
+                )
+                .pipe(dest("./tests"));
+        } else {
+            done();
+        }
     }
 }
 
