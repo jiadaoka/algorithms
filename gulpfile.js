@@ -86,7 +86,10 @@ function createLeetcodeTestOnJest(done) {
     const file = process.env.file.replace(/\\/g, "/");
     const bName = basename(file, ".js");
 
-    if (existsSync(`tests/leetcode/${bName}.spec.js`)) {
+    const filePath = `tests/leetcode/${bName}.spec.js`;
+    console.log(filePath);
+
+    if (existsSync(filePath)) {
         console.log("文件已存在");
         done();
     } else {
