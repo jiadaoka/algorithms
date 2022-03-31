@@ -16,6 +16,10 @@ describe("leetCode测试用例", () => {
     test("用例4", () => {
         expect(jump([1, 2, 1, 1, 1])).toBe(3);
     });
+
+    test("用例5", () => {
+        expect(jump([3, 4, 3, 1, 0, 7, 0, 3, 0, 2, 0, 3])).toBe(3);
+    });
 });
 
 describe("自定义", () => {
