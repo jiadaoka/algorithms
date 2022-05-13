@@ -4,6 +4,9 @@
  *     this.val = (val===undefined ? 0 : val)
  *     this.next = (next===undefined ? null : next)
  * }
+ * @Class
+ * @param {(number|object)} val
+ * @param {(Null|ListNode)} next
  */
 function ListNode(val, next) {
     this.val = val === undefined ? 0 : val;
@@ -13,6 +16,7 @@ function ListNode(val, next) {
 /**
  * 将数组元素作为链表值生成链表
  * @param {array} arr
+ * @return {ListNode}
  */
 function generateListNode(arr) {
     const inputListNode = new ListNode(arr[0]);
@@ -27,4 +31,21 @@ function generateListNode(arr) {
     return inputListNode;
 }
 
-export { ListNode, generateListNode };
+/**
+ * 取出链表生成数组
+ * TODO 只支持单链表
+ * @param {ListNode} listNode
+ * @return {array}
+ */
+function listNodeToArray(listNode) {
+    const arr = [];
+    let cur = listNode;
+    while (cur) {
+        arr.push(cur.val);
+        cur = cur.next;
+    }
+
+    return arr;
+}
+
+export { ListNode, generateListNode, listNodeToArray };
