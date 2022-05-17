@@ -48,4 +48,12 @@ function listNodeToArray(listNode) {
     return arr;
 }
 
-export { ListNode, generateListNode, listNodeToArray };
+/**
+ * 快速生成随机整数
+ * @param {number} digit
+ */
+function integerRandom(digit) {
+    return Math.floor(Math.random() * Math.pow(10, digit));
+}
+
+export { ListNode, generateListNode, listNodeToArray, integerRandom };
