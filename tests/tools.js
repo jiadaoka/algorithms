@@ -51,9 +51,37 @@ function listNodeToArray(listNode) {
 /**
  * 快速生成随机整数
  * @param {number} digit
+ * @returns {number}
  */
 function integerRandom(digit) {
     return Math.floor(Math.random() * Math.pow(10, digit));
 }
 
-export { ListNode, generateListNode, listNodeToArray, integerRandom };
+/**
+ * 排列组合
+ * C(m,n) = n! / (m! * (n - m)!)
+ */
+function combination(m, n) {
+    const result = factorial(n) / (factorial(m) * factorial(n - m));
+    return result;
+}
+
+/**
+ * 阶乘
+ * @param {number} n
+ * @returns {number}
+ */
+function factorial(n) {
+    let result = 1;
+    for (let i = n; i > 0; i--) result *= i;
+    return result;
+}
+
+export {
+    ListNode,
+    generateListNode,
+    listNodeToArray,
+    integerRandom,
+    combination,
+    factorial,
+};
